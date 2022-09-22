@@ -1,6 +1,10 @@
 import React from 'react';
 
+// style
 import { DefaultLayoutWrapper, DefaultLayoutContainer } from './style/DefaultLayout.style';
+
+// components
+import { LNBNavigation } from '../navigation/LNBNavigation';
 
 interface Props {
     children: React.ReactNode;
@@ -9,7 +13,10 @@ interface Props {
 export const DefaultLayout = ({ children }: Props) => {
     return (
         <DefaultLayoutWrapper>
-            <DefaultLayoutContainer>{children}</DefaultLayoutContainer>
+            <DefaultLayoutContainer>
+                <LNBNavigation />
+                {children}
+            </DefaultLayoutContainer>
         </DefaultLayoutWrapper>
     );
 };
