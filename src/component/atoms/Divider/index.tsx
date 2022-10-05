@@ -9,5 +9,5 @@ export const Line = styled('span', {
     display: 'block',
     width: '100%',
     height: '1px',
-    backgroundColor: '#ececec',
+    backgroundColor: '#3d76b3',
 });
