@@ -19,10 +19,17 @@ export const Text = styled('p', {
                 fontSize: '30px',
             },
             subTitle: {
+                fontSize: '26px',
+            },
+            bodyText: {
                 fontSize: '24px',
             },
-            bodyText: {},
-            subBodyText: {},
+            subBodyText: {
+                fontSize: '20px',
+            },
+            explain: {
+                fontSize: '18px',
+            },
         },
     },
 });
