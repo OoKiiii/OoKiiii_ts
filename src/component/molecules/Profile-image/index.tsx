@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { useStore } from 'src/store';
 
 // style
-import { ProfileImageWrap, ProfileImageBox } from './style/style';
+import { ProfileImageWrap, ProfileImageBox } from './style';
 
 export const ProfileImage = () => {
     const { auth } = useStore();

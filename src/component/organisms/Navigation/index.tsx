@@ -1,31 +1,31 @@
 import React, { useEffect } from 'react';
-import { GetServerSideProps } from 'next';
 
 // components
-import { ProfileImage } from '../../component/atom/profile-image/ProfileImage';
-import { Divider } from '../divider/Divider';
+import { ProfileImage } from '@/component/molecules/Profile-image';
+import { Divider } from '@/component/atoms/Divider';
 
 // style
-import { NavigationWrap } from './style/style';
-import { TextComponent } from '../../component/atom/text/Text';
+import { NavigationWrap } from './style';
+import { TextAtoms } from '@/component/atoms/Text';
 
 // store
-import { useStore } from 'src/store';
+import { useStore } from '@/store';
 
 export const LNBNavigation = () => {
     const { auth } = useStore();
 
     useEffect(() => {
         auth.getUserInfo?.();
+        auth.getUserRepository?.();
     }, []);
 
     return (
         <NavigationWrap>
             <ProfileImage />
-            <TextComponent text={auth?.name} textType="title" />
-            <TextComponent
+            <TextAtoms text={auth?.name} textType="subTitle" />
+            <TextAtoms
                 text={auth?.url}
-                textType="subTitle"
+                textType="explain"
                 href={auth?.url}
                 css={{ marginBottom: '30px' }}
                 link={true}

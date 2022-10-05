@@ -13,7 +13,7 @@ export const ProfileImageBox = styled('div', {
     position: 'relative',
     width: '100%',
     height: '100%',
-    minHeight: '250px',
+    minHeight: '150px',
     borderRadius: '50%',
     overflow: 'hidden',
 
@@ -22,8 +22,8 @@ export const ProfileImageBox = styled('div', {
             small: {},
             medium: {},
             large: {
-                maxWidth: '250px',
-                maxHeight: '250px',
+                maxWidth: '150px',
+                maxHeight: '150px',
             },
         },
     },

@@ -1,7 +1,13 @@
 import type { NextPage } from 'next';
 
+import { Main } from '@/component/templates/Main';
+
 const Home: NextPage = () => {
-    return <>인덱스 페이지 잡는다요~</>;
+    return (
+        <>
+            <Main />
+        </>
+    );
 };
 
 export default Home;

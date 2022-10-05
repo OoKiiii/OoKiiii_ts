@@ -3,8 +3,20 @@ export interface StoreAuthTypes {
     name: string | null;
     email: string | null;
     url: string | null;
+    repository:
+        | [
+              {
+                  id: number;
+                  name: string;
+                  updated_at: string;
+                  html_url: string;
+                  issue_open: number;
+              },
+          ]
+        | null;
 
     getUserInfo?: () => void;
+    getUserRepository?: () => void;
 }
 
 export interface getUserInfoResponseTypes {
@@ -14,5 +26,17 @@ export interface getUserInfoResponseTypes {
         avatar_url?: string;
         html_url?: string;
         login?: string;
-    }
+    };
+}
+
+export interface getUserRepositoryResponseTypes {
+    data: [
+        {
+            id: number;
+            name: string;
+            updated_at: string;
+            html_url: string;
+            issue_open: number;
+        },
+    ];
 }

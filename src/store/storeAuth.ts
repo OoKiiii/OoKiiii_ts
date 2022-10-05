@@ -2,10 +2,10 @@ import create, { StateCreator } from 'zustand';
 import { persist, PersistOptions } from 'zustand/middleware';
 
 // types
-import { StoreAuthTypes, getUserInfoResponseTypes } from 'src/store/storeAuth.d';
+import { StoreAuthTypes, getUserInfoResponseTypes, getUserRepositoryResponseTypes } from 'src/store/storeAuth.d';
 
 // api
-import { CustomAPI } from '../pages/api/customAPI';
+import { CustomAPI } from '@/pages/api/customAPI';
 import { AxiosRequestConfig, AxiosResponse } from 'axios';
 
 type MyPersist = (
@@ -18,6 +18,7 @@ const initialState: StoreAuthTypes = {
     name: null,
     email: null,
     url: null,
+    repository: null,
 };
 
 export const useStoreAuth = create<StoreAuthTypes>(
@@ -38,6 +39,20 @@ export const useStoreAuth = create<StoreAuthTypes>(
                             url: response.data.html_url,
                         }));
                     }
+                } catch {}
+            },
+            getUserRepository: async () => {
+                const { githubInstance } = CustomAPI();
+                const req: AxiosRequestConfig = {
+                    data: 'initOki',
+                };
+                try {
+                    const response: getUserRepositoryResponseTypes = await githubInstance.get(
+                        '/users/' + req.data + '/repos',
+                    );
+                    set(() => ({
+                        repository: response.data,
+                    }));
                 } catch {}
             },
         }),

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import type { AppProps } from 'next/app';
 import '../styles/common/index.scss';
 
-import { DefaultLayout } from '../common/layout/DefaultLayout';
+import { DefaultLayout } from '../component/atoms/Layout';
 
 function MyApp({ Component, pageProps }: AppProps) {
     const [isSSR, setIsSSR] = useState(true);
@@ -10,6 +10,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     useEffect(() => {
         setIsSSR(false);
     }, []);
+
     return (
         <>
             {!isSSR && (
