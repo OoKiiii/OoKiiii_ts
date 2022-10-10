@@ -2,7 +2,7 @@ import { styled } from '@stitches/react';
 
 export const DashBoardCard = styled('div', {
     width: '100%',
-    height: '300px',
+    height: 'auto',
     margin: '10px',
     padding: '10px',
     backgroundColor: 'rgb(21, 76, 189)',
@@ -22,4 +22,14 @@ export const DashBoardCard = styled('div', {
             },
         },
     },
+});
+
+export const RepositoryList = styled('div', {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+});
+
+export const RepositoryListContent = styled('div', {
+    flex: '0 1 1',
 });
