@@ -36,6 +36,7 @@ export interface getUserRepositoryResponseTypes {
             id: number;
             name: string;
             updated_at: string;
+            pushed_at: string;
             html_url: string;
             issue_open: number;
         },
