@@ -28,7 +28,15 @@ export const Text = styled('p', {
                 fontSize: '20px',
             },
             explain: {
-                fontSize: '18px',
+                fontSize: '14px',
+            },
+        },
+        position: {
+            left: {
+                justifyContent: 'flex-start',
+            },
+            right: {
+                justifyContent: 'flex-end',
             },
         },
     },
