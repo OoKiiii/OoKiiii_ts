@@ -12,6 +12,7 @@ export interface StoreAuthTypes {
                   pushed_at: string;
                   html_url: string;
                   issue_open: number;
+                  languages_url: string;
               },
           ]
         | null;
@@ -39,6 +40,7 @@ export interface getUserRepositoryResponseTypes {
             pushed_at: string;
             html_url: string;
             issue_open: number;
+            languages_url: string;
         },
     ];
 }

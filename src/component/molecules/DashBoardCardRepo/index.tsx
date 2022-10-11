@@ -1,37 +1,35 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { DashBoardCard, RepositoryList, RepositoryListContent } from './style';
+import { DashBoardCard, RepositoryList } from './style';
 
 import { useStore } from '@/store';
 
 // Atoms
-// import { CardTitleAtoms } from '@/component/atoms/CardTitle';
 import { TextAtoms } from '@/component/atoms/Text';
 import { IconAtoms } from '@/component/atoms/Icon';
 
+interface test {
+    id: number;
+    label: string;
+    data: [];
+}
+
 export const DashBoardCardRepo = () => {
-    const { auth } = useStore();
+    const { auth, language } = useStore();
 
     // 날짜순으로 정렬 후 인덱스 0~5개만 가지고 옴
     const orderedDate = auth.repository
         ?.sort((a, b) => new Date(b.pushed_at).getTime() - new Date(a.pushed_at).getTime())
         .slice(0, 5);
 
-    const CardTitle = [
-        {
-            title: '레포지토리 이름',
-        },
-        {
-            title: '업데이트 날짜',
-        },
-        {
-            title: 'Github 이동',
-        },
-    ];
-
-    console.log(orderedDate);
+    useEffect(() => {
+        // Default로 첫번째 data를 호출
+        if (orderedDate) {
+            language.getLanguage?.(orderedDate[0].languages_url);
+        }
+    }, []);
 
     return (
         <>
@@ -44,7 +42,8 @@ export const DashBoardCardRepo = () => {
                                 text={item.name}
                                 textType={'explain'}
                                 position={'left'}
-                                css={{ margin: '5px 0' }}
+                                css={{ margin: '5px 0', cursor: 'pointer' }}
+                                onClick={() => language.getLanguage?.(item.languages_url)}
                             />
                             <TextAtoms text={item.pushed_at.slice(0, -10)} textType={'explain'} />
 
