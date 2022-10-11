@@ -11,4 +11,5 @@ export interface Props<T> {
     css?: object;
     target?: Types['target'];
     position?: 'left' | 'right';
+    onClick?: () => void;
 }
