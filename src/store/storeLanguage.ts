@@ -4,15 +4,21 @@ import axios from 'axios';
 
 const initialState: StoreLanguageTypes = {
     language: '',
+    name: '',
+    deployUrl: '',
+    htmlUrl: '',
 };
 
 export const useStoreLanguage = create<StoreLanguageTypes>(set => ({
     ...initialState,
-    getLanguage: async payload => {
+    getLanguage: async ({ endPoint, repositoryName, deployUrl, htmlUrl }) => {
         try {
-            const response = await axios.get(payload);
+            const response = await axios.get(endPoint);
             set(() => ({
                 language: response.data,
+                name: repositoryName,
+                deployUrl: deployUrl,
+                htmlUrl: htmlUrl,
             }));
         } catch {}
     },

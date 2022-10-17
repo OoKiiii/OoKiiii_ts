@@ -4,19 +4,15 @@ import React from 'react';
 import { Text } from './style';
 
 // types
-import { Props } from './index.d';
+import { Props } from './type.d';
 
-export const TextAtoms = <T,>({ text, textType, href, css, link, target, position, onClick }: Props<T>) => {
+export const TextAtoms = <T,>({ text, textType, href, css, link, target, position, onClick, children }: Props<T>) => {
     return (
         <>
             <Text textType={textType} position={position} css={{ ...css }} onClick={onClick}>
-                {link ? (
-                    <a href={href} target={target}>
-                        {text}
-                    </a>
-                ) : (
-                    <>{text}</>
-                )}
+                {text}
+                &nbsp;
+                {children}
             </Text>
         </>
     );

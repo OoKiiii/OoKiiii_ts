@@ -2,15 +2,15 @@ import React from 'react';
 
 import { HeaderOrganisms } from '@/component/organisms/Header';
 
-import { DashBoardCardRepo } from '@/component/molecules/DashBoardCardRepo';
-import { DashBoardCardChart } from '@/component/molecules/DashBoardCardChart';
+import { DashBoardCardRepoList } from '@/component/organisms/DashBoardCardRepoList';
+import { DashBoardCardChart } from '@/component/organisms/DashBoardCardChart';
 
 export const Main = () => {
     return (
         <>
             <HeaderOrganisms />
             <div style={{ display: 'flex' }}>
-                <DashBoardCardRepo />
+                <DashBoardCardRepoList />
                 <DashBoardCardChart />
             </div>
         </>

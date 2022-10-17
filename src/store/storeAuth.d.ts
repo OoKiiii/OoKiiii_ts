@@ -13,6 +13,7 @@ export interface StoreAuthTypes {
                   html_url: string;
                   issue_open: number;
                   languages_url: string;
+                  homepage: string;
               },
           ]
         | null;

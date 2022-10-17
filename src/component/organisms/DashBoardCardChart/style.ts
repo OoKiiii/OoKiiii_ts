@@ -24,12 +24,20 @@ export const DashBoardCard = styled('div', {
     },
 });
 
-export const RepositoryList = styled('div', {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
+export const ChartBox = styled('div', {
+    width: '100%',
+    maxWidth: '100px',
+    height: '100%',
+    maxHeight: '100px',
+    marginTop: '20px',
 });
 
-export const RepositoryListContent = styled('div', {
-    flex: '0 1 1',
+export const LinkWrapper = styled('div', {
+    display: 'flex',
+    alignItems: 'flex-start',
+    justifyContent: 'center',
+    flexDirection: 'column',
+    width: '100%',
+    height: '120px',
+    marginLeft: '30px',
 });

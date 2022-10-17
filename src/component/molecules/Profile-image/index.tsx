@@ -9,7 +9,6 @@ import { ProfileImageWrap, ProfileImageBox } from './style';
 
 export const ProfileImage = () => {
     const { auth } = useStore();
-    // console.log(auth.profileImage);
 
     return (
         <ProfileImageWrap>

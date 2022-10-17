@@ -12,4 +12,5 @@ export interface Props<T> {
     target?: Types['target'];
     position?: 'left' | 'right';
     onClick?: () => void;
+    children?: React.ReactNode;
 }
