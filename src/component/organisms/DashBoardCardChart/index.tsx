@@ -34,7 +34,6 @@ export const DashBoardCardChart = () => {
             },
         ],
     };
-    console.log(language);
 
     return (
         <DashBoardCard>
