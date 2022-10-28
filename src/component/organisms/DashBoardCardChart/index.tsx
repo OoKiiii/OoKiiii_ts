@@ -35,6 +35,8 @@ export const DashBoardCardChart = () => {
         ],
     };
 
+    console.log('123');
+
     return (
         <DashBoardCard>
             <CardTitle title={language.name} />
