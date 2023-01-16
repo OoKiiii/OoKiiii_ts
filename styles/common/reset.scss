@@ -1,0 +1,57 @@
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    scrollbar-width: auto;
+    scrollbar-color: #5c5c5c #ffffff;
+    padding: 0;
+    margin: 0;
+    font-family: Pretendard, 'Noto Sans KR', 'Noto';
+}
+a {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    color: #333;
+}
+a:focus,
+button:focus,
+input:focus,
+label:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+}
+label,
+button,
+select {
+    cursor: pointer;
+}
+dd,
+dl,
+ol,
+ul {
+    margin: 0;
+    padding: 0;
+}
+li {
+    list-style: none;
+}
+input {
+    border: 1px solid #888;
+    border-radius: 5px;
+    width: 300px;
+}
+input[type='checkbox'] {
+    width: auto;
+    cursor: pointer;
+}
+/* Chrome, Safari, Edge, Opera input number arrow is hide */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+/* Firefox */
+input[type='number'] {
+    -moz-appearance: textfield;
+}
