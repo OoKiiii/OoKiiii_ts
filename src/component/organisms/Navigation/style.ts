@@ -9,7 +9,6 @@ export const NavigationWrap = styled('div', {
     margin: '10px',
     padding: '10px',
     backgroundColor: 'rgb(21, 76, 189)',
-    // border: '1px solid #ececec',
     borderRadius: '8px',
     boxShadow: '0 0 10px 0 rgba(0, 0, 0, 0.2)',
 });
